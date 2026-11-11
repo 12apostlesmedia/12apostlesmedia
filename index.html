@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 Apostles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ 0. INICIO: la puerta se abre al cargar la página ============ -->
+<section class="s-inicio" id="inicio">
+  <!-- Imagen que queda de fondo cuando se cruza la puerta -->
+  <div class="inicio-fondo"><img src="img2/inicio.jpg" alt=""></div>
+
+  <!-- El arco oculta un interior oscuro hasta que lo atraviesa la luz -->
+  <div class="escenario" aria-hidden="true">
+    <div class="hueco"></div>
+    <img class="arco" src="img2/marco-inicio.png" alt="">
+  </div>
+
+  <!-- Lo que aparece cuando termina la animación -->
+  <div class="inicio-contenido">
+    <header class="menu">
+      <a href="#" class="logo"><img src="img2/logo2-claro.png" alt="12 Apostles"></a>
+      <nav>
+        <a href="#sobre">about</a>
+        <a href="#servicios">services</a>
+        <a href="#clientes">clients</a>
+        <a href="#equipo">team</a>
+      </nav>
+      <a href="#contacto" class="menu-contacto">contact</a>
+    </header>
+
+    <h2 class="titular-glow">We help you become<br>what you<br>wanna be</h2>
+    <p class="bajada">We build your brand. We make it grow.<br>Everything your brand needs. Done by the best.</p>
+    <a href="#contacto" class="boton-circulo">Let’s talk</a>
+
+    <p class="esquina esq-izq">Branding, web,<br>content & strategy</p>
+    <p class="esquina esq-der">for brands<br>destined for<br>bigger things</p>
+  </div>
+</section>
+
+<!-- ============ 2. SOBRE LA AGENCIA ============ -->
+<section class="s-sobre" id="sobre">
+  <p class="etiqueta">[ About us ]</p>
+  <h2 class="frase revelar">
+    <b>Destined for bigger things.</b> We build brands with ambition, clarity and the
+    discipline to turn attention into real growth.
+  </h2>
+  <p class="mini tenue lema-izq">We build your brand.<br>We make it grow.</p>
+</section>
+
+<!-- ============ 4a. SERVICIOS: tarjetas que se apilan al hacer scroll ============ -->
+<!-- Cada <article class="servicio"> es una tarjeta: número, título, etiquetas, descripción y una imagen a la derecha -->
+<section class="s-servicios" id="servicios">
+  <div class="servicios-cabecera">
+    <p class="etiqueta">[ WHAT WE DO ]</p>
+    <h2 class="servicios-titulo revelar"><span>Everything</span><span class="sangria-titulo">your brand needs</span></h2>
+    <span class="servicios-flecha" aria-hidden="true">↙</span>
+    <p class="servicios-intro">Branding, social media, web, paid media, photography &amp; filmmaking. One team. One standard. Results we answer for.</p>
+  </div>
+
+  <div class="servicios-lista">
+
+    <article class="servicio">
+      <div class="servicio-texto">
+        <span class="servicio-numero">01</span>
+        <h3>Branding</h3>
+        <ul class="servicio-etiquetas"><li>Brand strategy</li><li>Visual identity</li><li>Tone of voice</li></ul>
+        <p>Who your brand is, and how it looks, sounds and feels. We shape the strategy, positioning and visual system that make your brand unmistakable.</p>
+        <a href="#contacto" class="servicio-boton">Let’s talk <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="servicio-visual visual-branding" aria-hidden="true">
+        <img src="img2/logo2-claro.png" alt="">
+        <div class="paleta"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </article>
+
+    <article class="servicio">
+      <div class="servicio-texto">
+        <span class="servicio-numero">02</span>
+        <h3>Social Media</h3>
+        <ul class="servicio-etiquetas"><li>Content strategy</li><li>Design &amp; copy</li><li>Community management</li></ul>
+        <p>The content your audience sees every day. We build the systems, stories and creative that keep your brand visible, relevant and consistent.</p>
+        <a href="#redes" class="servicio-boton">See our work <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="servicio-visual visual-social" aria-hidden="true">
+        <img src="img/celulares/olivo/perspective.webp" alt="">
+        <img src="img/celulares/candioti/perspective.webp" alt="">
+      </div>
+    </article>
+
+    <article class="servicio">
+      <div class="servicio-texto">
+        <span class="servicio-numero">03</span>
+        <h3>Web Design</h3>
+        <ul class="servicio-etiquetas"><li>Web design</li><li>Development</li><li>Landing pages</li></ul>
+        <p>A website as good as your brand. We create digital experiences that communicate clearly, convert with intent and feel premium from the first click.</p>
+        <a href="#contacto" class="servicio-boton">Let’s talk <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="servicio-visual visual-web" aria-hidden="true">
+        <div class="navegador">
+          <div class="navegador-barra"><i></i><i></i><i></i></div>
+          <div class="navegador-pantalla">
+            <img src="img2/inicio.jpg" alt="">
+            <img class="navegador-logo" src="img2/logo2-claro.png" alt="">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="servicio">
+      <div class="servicio-texto">
+        <span class="servicio-numero">04</span>
+        <h3>Paid Media</h3>
+        <ul class="servicio-etiquetas"><li>Meta &amp; Google Ads</li><li>Campaign strategy</li><li>Reporting &amp; optimization</li></ul>
+        <p>We plan, launch and optimize ad campaigns that put your brand in front of the right people. Clear goals, a budget that works hard and monthly reports so you always know what you’re getting back.</p>
+        <a href="#contacto" class="servicio-boton">Let’s talk <span aria-hidden="true">→</span></a>
+      </div>
+      <!-- Panel de campaña: barras que suben (decorativo, sin datos reales) -->
+      <div class="servicio-visual visual-ads" aria-hidden="true">
+        <div class="campana">
+          <div class="campana-cabecera"><span>Campaign</span><span class="campana-activa">● Live</span></div>
+          <div class="campana-barras"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="campana-pie"><span>Reach</span><span>Clicks</span><span>Sales</span></div>
+        </div>
+        <span class="campana-flecha">↗</span>
+      </div>
+    </article>
+
+    <article class="servicio">
+      <div class="servicio-texto">
+        <span class="servicio-numero">05</span>
+        <h3>Photography &amp; Filmmaking</h3>
+        <ul class="servicio-etiquetas"><li>Product photography</li><li>Brand films</li><li>Reels &amp; short video</li></ul>
+        <p>Photos and films made for your channels. We turn product, people and story into visuals that feel cinematic and built for growth.</p>
+        <a href="#contacto" class="servicio-boton">Let’s talk <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="servicio-visual visual-foto" aria-hidden="true">
+        <div class="visor">
+          <img src="img2/inicio.jpg" alt="">
+          <span class="visor-rec">● REC</span>
+          <span class="visor-play">▶</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 4b. CELULARES: carrusel de redes sociales ============ -->
+<!-- Para agregar una marca: copia un <article>, cambia data-brand (nombre de la carpeta en img/celulares),
+     data-name (el nombre que se ve) y data-posts (cuántos posts hay: 01.webp, 02.webp...) -->
+<section class="s-celulares" id="redes">
+  <div class="celulares-cabecera">
+    <p class="etiqueta">[ Social media ]</p>
+    <h2 class="revelar">The content your<br>audience sees<br>every day</h2>
+    <p class="mini tenue-crema">Tap a device to explore<br>the work behind each brand</p>
+  </div>
+
+  <div class="carrusel-marco">
+    <button type="button" class="carrusel-flecha carrusel-anterior" aria-label="Ver celulares anteriores" aria-controls="carrusel">‹</button>
+    <div class="carrusel" id="carrusel" tabindex="0" aria-label="Carrusel de proyectos. Desliza para ver más.">
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="candioti" data-name="Candioti" data-posts="23" aria-label="Ver los posts de Candioti">
+          <img src="img/celulares/candioti/perspective.webp" alt="Celular con el Instagram de Candioti" loading="lazy">
+          <span class="celular-nombre">Candioti</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="catania" data-name="Catania" data-posts="14" aria-label="Ver los posts de Catania">
+          <img src="img/celulares/catania/perspective.webp" alt="Celular con el Instagram de Catania" loading="lazy">
+          <span class="celular-nombre">Catania</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="crown" data-name="Crown" data-posts="12" aria-label="Ver los posts de Crown">
+          <img src="img/celulares/crown/perspective.webp" alt="Celular con el Instagram de Crown" loading="lazy">
+          <span class="celular-nombre">Crown</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="enser" data-name="Enser" data-posts="12" aria-label="Ver los posts de Enser">
+          <img src="img/celulares/enser/perspective.webp" alt="Celular con el Instagram de Enser" loading="lazy">
+          <span class="celular-nombre">Enser</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="fulano" data-name="Fulano.bar" data-posts="13" aria-label="Ver los posts de Fulano.bar">
+          <img src="img/celulares/fulano/perspective.webp" alt="Celular con el Instagram de Fulano.bar" loading="lazy">
+          <span class="celular-nombre">Fulano.bar</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="idertur" data-name="Idertur" data-posts="12" aria-label="Ver los posts de Idertur">
+          <img src="img/celulares/idertur/perspective.webp" alt="Celular con el Instagram de Idertur" loading="lazy">
+          <span class="celular-nombre">Idertur</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="lbda" data-name="LBDA" data-posts="24" aria-label="Ver los posts de LBDA">
+          <img src="img/celulares/lbda/perspective.webp" alt="Celular con el Instagram de LBDA" loading="lazy">
+          <span class="celular-nombre">LBDA</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="newconcret" data-name="Newconcret" data-posts="15" aria-label="Ver los posts de Newconcret">
+          <img src="img/celulares/newconcret/perspective.webp" alt="Celular con el Instagram de Newconcret" loading="lazy">
+          <span class="celular-nombre">Newconcret</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="olivo" data-name="Olivo" data-posts="17" aria-label="Ver los posts de Olivo">
+          <img src="img/celulares/olivo/perspective.webp" alt="Celular con el Instagram de Olivo" loading="lazy">
+          <span class="celular-nombre">Olivo</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="prime" data-name="Prime" data-posts="20" aria-label="Ver los posts de Prime">
+          <img src="img/celulares/prime/perspective.webp" alt="Celular con el Instagram de Prime" loading="lazy">
+          <span class="celular-nombre">Prime</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="qchef" data-name="QChef" data-posts="7" aria-label="Ver los posts de QChef">
+          <img src="img/celulares/qchef/perspective.webp" alt="Celular con el Instagram de QChef" loading="lazy">
+          <span class="celular-nombre">QChef</span>
+        </button>
+      </article>
+      <article class="celular">
+        <button type="button" class="celular-boton" data-brand="rodriguezguas" data-name="Rodriguez Guas" data-posts="28" aria-label="Ver los posts de Rodriguez Guas">
+          <img src="img/celulares/rodriguezguas/perspective.webp" alt="Celular con el Instagram de Rodriguez Guas" loading="lazy">
+          <span class="celular-nombre">Rodriguez Guas</span>
+        </button>
+      </article>
+    </div>
+    <button type="button" class="carrusel-flecha carrusel-siguiente" aria-label="Ver más celulares" aria-controls="carrusel">›</button>
+  </div>
+
+  <p class="celulares-pie">Brand direction and social content: we shape identities and strategies that make every touchpoint feel intentional, premium and memorable.</p>
+</section>
+
+<!-- Ventana con los posts de la marca elegida (la llena script.js) -->
+<dialog class="ventana-posts" id="ventana-posts" aria-labelledby="ventana-titulo">
+  <div class="ventana-contenido">
+    <button type="button" class="ventana-cerrar" aria-label="Cerrar">×</button>
+    <header class="ventana-cabecera">
+      <p class="etiqueta">[ Redes sociales ]</p>
+      <h2 id="ventana-titulo"></h2>
+    </header>
+    <div class="ventana-grilla"></div>
+  </div>
+</dialog>
+
+<!-- ============ 5. LOGOS & MARKS (traída del portfolio, adaptada a 12 Apostles) ============ -->
+<!-- Para agregar un logo: guárdalo en img/logos/ y copia un <li> cambiando la imagen y el nombre -->
+<section class="s-logos" id="clientes">
+  <!-- Cinta con el título que se desplaza sola (el grupo va dos veces para que el movimiento no tenga cortes) -->
+  <h2 class="logos-cinta" aria-label="Logos &amp; Marks">
+    <span class="logos-cinta-pista" aria-hidden="true">
+      <span class="logos-cinta-grupo"><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span></span>
+      <span class="logos-cinta-grupo"><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span><span>Logos <i>&amp; Marks</i></span></span>
+    </span>
+  </h2>
+
+  <div class="logos-cabecera">
+    <p class="etiqueta">[ Identities we built ]</p>
+    <p class="logos-intro">Logos and visual identities designed for brands destined for bigger things.</p>
+  </div>
+
+  <ul class="logos-grilla">
+    <li><div class="logo-ficha"><img src="img/logos/candioti.webp" alt="Logo de Candioti Resto Café" loading="lazy"></div><p>Candioti Resto Café</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/golden-cow.webp" alt="Logo de Golden Cow" loading="lazy"></div><p>Golden Cow</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/elios.webp" alt="Logo de Elios Entre Maderas" loading="lazy"></div><p>Elios Entre Maderas</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/mundohub.webp" alt="Logo de MundoHub" loading="lazy"></div><p>MundoHub</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/bragadato.webp" alt="Logo de Grupo Bragadato Medios" loading="lazy"></div><p>Grupo Bragadato Medios</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/don-electo.webp" alt="Logo de Don Electo" loading="lazy"></div><p>Don Electo</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/clubhouse.webp" alt="Logo de Clubhouse" loading="lazy"></div><p>Clubhouse</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/futura-project.webp" alt="Logo de Futura Project" loading="lazy"></div><p>Futura Project</p></li>
+    <li><div class="logo-ficha"><img src="img/logos/la-botica.webp" alt="Logo de La Botica del Abuelo" loading="lazy"></div><p>La Botica del Abuelo</p></li>
+  </ul>
+</section>
+
+<!-- ============ 6. CIFRAS ============ -->
+<section class="s-cifras textura" id="equipo">
+  <div class="cifras-cabecera">
+    <h2>We build your brand.<br>We make it grow.</h2>
+    <p class="etiqueta blanca">[ About us ]</p>
+  </div>
+
+  <div class="cifras-grid">
+    <div class="col">
+      <div class="dato revelar"><strong>+5 years</strong><span><em>of experience</em> in the<br>marketing industry</span></div>
+      <div class="dato revelar"><strong>30+</strong><span><em>long-term</em> international<br>clients and partners</span></div>
+      <p class="mini roja">Our growth<br>in numbers</p>
+    </div>
+
+    <!-- FOTO tipo diapositiva en blanco y negro -->
+    <div class="foto-pelicula"><img src="https://picsum.photos/seed/grupo/600/750?grayscale" alt=""></div>
+
+    <div class="col col-der">
+      <p class="mini roja">Results that<br>speak for<br>themselves</p>
+      <div class="dato revelar"><strong>Global</strong><span>brand strategy built<br>for multiple markets</span></div>
+      <div class="dato revelar"><strong>360°</strong><span>creative and strategic<br>support, end to end</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. MANIFIESTO ============ -->
+<section class="s-manifiesto textura">
+  <p class="mini roja esq-sup">Strategy + creativity =<br>real growth</p>
+  <h2 class="manifiesto-texto revelar">
+    We build brands with the clarity to move first, the discipline to keep growing,
+    and the ambition to become <span class="subrayado">what they’re meant to be</span>
+  </h2>
+  <span class="flechas">⟶<br>⟶</span>
+  <p class="mini roja esq-der2">Ahead of<br>the curve</p>
+  <div class="triangulo"></div>
+</section>
+
+<section class="contacto" id="contacto" aria-label="Contact 12 Apostles">
+  <article class="contacto-mensaje" aria-label="Contact message">
+    <div class="contacto-mensaje-cabecera">
+      <span class="contacto-mensaje-icono" aria-hidden="true">
+        <svg viewBox="0 0 40 40" focusable="false">
+          <path d="M20 5.5c-8 0-14.5 5.8-14.5 13 0 3.6 1.7 6.8 4.5 9.1L8.7 34l7-3.5c1.4.4 2.8.6 4.3.6 8 0 14.5-5.8 14.5-13S28 5.5 20 5.5Z" fill="currentColor" />
+          <circle cx="14" cy="18.5" r="1.5" />
+          <circle cx="20" cy="18.5" r="1.5" />
+          <circle cx="26" cy="18.5" r="1.5" />
+        </svg>
+      </span>
+      <span>MESSAGE</span>
+      <span class="contacto-mensaje-hora">now</span>
+    </div>
+    <div class="contacto-mensaje-cuerpo">
+      <strong>Paloma Latorre Heredia</strong>
+      <p>Tell us about your brand. Let’s talk.</p>
+    </div>
+  </article>
+
+  <nav class="contacto-opciones" aria-label="Contact options">
+    <a class="contacto-opcion" href="https://wa.me/542342530712" target="_blank" rel="noopener noreferrer">
+      <span>WhatsApp</span>
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <path d="M8 32.5 10 26a14 14 0 1 1 5.4 5l-7.4 1.5Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8" />
+        <path d="M15.5 13.5c.5-.8 1.1-.7 1.6-.7l1.2 3.1-1.3 1.6c1 2.1 2.7 3.7 4.9 4.6l1.5-1.4 3.1 1.5c.1 1.8-1 3.2-2.7 3.4-4.8.6-11.8-6.1-11.4-10.7.1-.6.7-1.2 1.3-1.4Z" fill="currentColor" />
+      </svg>
+    </a>
+    <a class="contacto-opcion" href="https://www.instagram.com/futuraproject_ar?exln=MWNpbzlhcmdwc2w0cg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+      <span>Instagram</span>
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect x="5.5" y="5.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="3" />
+        <circle cx="20" cy="20" r="7" fill="none" stroke="currentColor" stroke-width="3" />
+        <circle cx="29" cy="11.5" r="1.8" fill="currentColor" />
+      </svg>
+    </a>
+    <a class="contacto-opcion" href="tel:+542342530712">
+      <span>Phone call</span>
+      <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <path d="M12.5 5.5 18 12l-3.5 4c1.7 3.7 4.7 6.7 8.4 8.4l4-3.5 6.1 5.2c.7.6.9 1.6.4 2.4-1.7 2.8-4.5 4.2-7.7 3.5C16.2 29.8 9.1 22.7 6.9 13.2c-.7-3.2.7-6 3.5-7.7.7-.5 1.5-.3 2.1 0Z" fill="currentColor" />
+        <path d="M22 7c5.8 1.1 9.9 5.2 11 11M21 12c3.1.7 5.3 2.9 6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.5" />
+      </svg>
+    </a>
+  </nav>
+</section>
+
+<footer>
+  <span>© 12 Apostles</span>
+  <a href="mailto:12apostlesmedia@gmail.com">12apostlesmedia@gmail.com</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
