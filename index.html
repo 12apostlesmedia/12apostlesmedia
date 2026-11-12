@@ -16,10 +16,11 @@
   <!-- Imagen que queda de fondo cuando se cruza la puerta -->
   <div class="inicio-fondo"><img src="img2/inicio.jpg" alt=""></div>
 
-  <!-- El arco oculta un interior oscuro hasta que lo atraviesa la luz -->
+  <!-- Las nubes y el arco, en capas separadas, se acercan hasta revelar el fondo -->
   <div class="escenario" aria-hidden="true">
-    <div class="hueco"></div>
+    <img class="nubes" src="img2/clouds.png" alt="">
     <img class="arco" src="img2/marco-inicio.png" alt="">
+    <div class="bruma-arco"></div>
   </div>
 
   <!-- Lo que aparece cuando termina la animación -->
@@ -60,7 +61,6 @@
   <div class="servicios-cabecera">
     <p class="etiqueta">[ WHAT WE DO ]</p>
     <h2 class="servicios-titulo revelar"><span>Everything</span><span class="sangria-titulo">your brand needs</span></h2>
-    <span class="servicios-flecha" aria-hidden="true">↙</span>
     <p class="servicios-intro">Branding, social media, web, paid media, photography &amp; filmmaking. One team. One standard. Results we answer for.</p>
   </div>
 

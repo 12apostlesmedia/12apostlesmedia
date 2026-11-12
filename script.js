@@ -1,12 +1,12 @@
-// 0) Animación de inicio: la luz abre el paso y revela el fresco a pantalla completa
+// 0) Animación de inicio: el arco se acerca y revela el fresco a pantalla completa
 const inicio = document.querySelector('.s-inicio');
 const sinAnimaciones = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Tiempos de cada paso en milisegundos (cámbialos para hacerla más rápida o más lenta)
 const pasos = [
-  ['paso-1', 100],   // aparece el arco con la puerta oscura
-  ['paso-2', 450],   // la cámara cruza el arco mientras aparece la luz
-  ['paso-3', 1650],  // el fresco ocupa toda la pantalla después de la luz
-  ['paso-4', 2350],  // aparecen el logo, el menú y los textos tras el fresco
+  ['paso-1', 100],   // aparece el arco con las nubes
+  ['paso-2', 450],   // la cámara se acerca al arco mientras aparece la luz
+  ['paso-3', 1550],  // el destello cubre el final del acercamiento
+  ['paso-4', 2200],  // el destello se apaga y aparece el contenido
 ];
 function empezarIntro() {
   if (sinAnimaciones) {

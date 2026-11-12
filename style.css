@@ -59,7 +59,7 @@ h1, h2 { font-weight: 700; text-transform: uppercase; letter-spacing: -0.03em; l
 .sangria { padding-left: 25vw; }
 .lema-izq { position: absolute; left: 3vw; top: 42vh; }
 
-/* ===== 0. Inicio: la puerta se abre y revela la imagen ===== */
+/* ===== 0. Inicio: el arco se acerca y revela la imagen ===== */
 .s-inicio {
   position: relative; height: 100vh; min-height: 560px; overflow: hidden; text-align: center;
   background: radial-gradient(ellipse at 50% 55%, #100c0c 0%, #070606 55%, #000 100%);
@@ -71,45 +71,44 @@ h1, h2 { font-weight: 700; text-transform: uppercase; letter-spacing: -0.03em; l
 .inicio-fondo { position: absolute; z-index: 0; inset: 0; opacity: 0; transition: opacity .65s ease; }
 .inicio-fondo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1.2s ease-out; }
 /* capa oscura para que se lea el texto encima del fresco */
-.inicio-fondo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.68), rgba(10,5,5,.48) 50%, rgba(0,0,0,.86)); }
+.inicio-fondo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.4), rgba(10,5,5,.2) 50%, rgba(0,0,0,.58)); }
 
 .escenario {
-  position: absolute; z-index: 2; left: 50%; top: 50%;
-  height: min(88vh, 140vw); aspect-ratio: 9 / 16;
-  transform: translate(-50%, -50%) scale(.92); transform-origin: 50% 61%;
+  position: absolute; z-index: 2; inset: 0; overflow: hidden;
+  transform: scale(.92); transform-origin: 50% 53%;
   opacity: 0; transition: opacity .35s ease;
   will-change: transform, opacity;
 }
-.arco { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; filter: drop-shadow(0 0 40px rgba(0,0,0,.6)); }
-/* hueco del arco (medido sobre la imagen marco-inicio.png) */
-.hueco {
-  position: absolute; left: 18.5%; width: 63%; top: 25.9%; height: 69.7%;
-  border-radius: 50% 50% 0 0 / 25.4% 25.4% 0 0; overflow: hidden;
-  /* la puerta: un hueco oscuro */
-  background: radial-gradient(ellipse at 50% 60%, #1a0202 0%, #070000 60%, #000 100%);
-  box-shadow: inset 0 0 60px rgba(0,0,0,.9);
-}
+.nubes { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.arco { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; object-fit: contain; filter: drop-shadow(0 0 12px rgba(235,224,194,.22)); }
+.bruma-arco { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; height: 32%; pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(223,215,190,.32)); }
 .inicio-contenido { position: absolute; z-index: 3; inset: 0; opacity: 0; visibility: hidden; transition: opacity .45s ease; }
 
 /* --- Pasos de la animación (los activa script.js) --- */
-/* paso 1: aparece el arco con la puerta oscura */
-.s-inicio.paso-1 .escenario { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-/* paso 2: un solo movimiento continuo atraviesa el arco */
+/* paso 1: aparece el arco con las nubes */
+.s-inicio.paso-1 .escenario { opacity: 1; transform: scale(1); }
+/* paso 2: un solo movimiento continuo se acerca al arco */
 .s-inicio.paso-2 .escenario { animation: atravesar-arco 1.1s cubic-bezier(.45, .05, .2, 1) both; }
-/* paso 3: cruzamos la puerta y la imagen pasa a ocupar toda la pantalla */
-.s-inicio.paso-3 .escenario { transform: translate(-50%, -50%) scale(7); opacity: 0;
+/* paso 3: el fresco pasa a ocupar toda la pantalla */
+.s-inicio.paso-3 .escenario { transform: scale(7); opacity: 0;
   transition: opacity .3s ease; }
 .s-inicio.paso-2::before { animation: iluminar 1s ease-out .15s both; }
+.s-inicio.paso-3::before { background: #fff; animation: destello-final .65s ease-out both; }
 .s-inicio.paso-3 .inicio-fondo { opacity: 1; }
 .s-inicio.paso-3 .inicio-fondo img { transform: scale(1); }
 .s-inicio.paso-4 .inicio-contenido { opacity: 1; visibility: visible; }
 @keyframes atravesar-arco {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  100% { transform: translate(-50%, -50%) scale(7); }
+  0% { transform: scale(1); }
+  100% { transform: scale(7); }
 }
 @keyframes iluminar {
   0%, 100% { opacity: 0; }
   40% { opacity: 1; }
+}
+@keyframes destello-final {
+  0%, 100% { opacity: 0; }
+  25% { opacity: .95; }
 }
 
 /* Logo con fade-in: llega desenfocado y se enfoca */
@@ -140,7 +139,7 @@ h1, h2 { font-weight: 700; text-transform: uppercase; letter-spacing: -0.03em; l
 .logo { color: var(--rojo); font-weight: 800; }
 .menu nav { display: flex; gap: 4vw; }
 .menu-contacto { color: var(--rojo); border-bottom: 1px solid var(--rojo); }
-.titular-glow { position: relative; z-index: 1; margin-top: 16vh; font-size: calc(10.5vw - 5pt); color: rgba(232,17,12,.85); text-shadow: 0 0 30px rgba(255,60,40,.45); }
+.titular-glow { position: relative; z-index: 1; margin-top: 16vh; font-size: calc(10.5vw - 5pt); color: #ebe0c2; text-shadow: 0 0 12px rgba(235,224,194,.24); }
 .bajada { position: absolute; z-index: 3; left: 0; right: 0; top: 62%; font-size: 11px; font-weight: 600; text-transform: uppercase; }
 .boton-circulo { position: absolute; z-index: 3; left: 50%; top: 70%; width: 130px; height: 130px; margin-left: -65px; border-radius: 50%; background: var(--rojo); display: grid; place-items: center; font-size: 22px; font-weight: 800; text-transform: uppercase; line-height: .9; transform: rotate(-8deg); transition: transform .3s; }
 .boton-circulo:hover { transform: rotate(0) scale(1.08); }
@@ -169,7 +168,6 @@ h1, h2 { font-weight: 700; text-transform: uppercase; letter-spacing: -0.03em; l
 .servicios-cabecera { position: relative; margin-bottom: 10vh; }
 .servicios-titulo { display: flex; flex-direction: column; margin-top: 16px; font-size: 13vw; color: var(--crema); line-height: .85; }
 .sangria-titulo { padding-left: 12vw; }
-.servicios-flecha { position: absolute; right: 4vw; bottom: 8vh; font-size: 9vw; line-height: 1; color: var(--rojo); }
 .servicios-intro { max-width: 380px; margin: 4vh 0 0 auto; font-size: 15px; line-height: 1.4; color: rgba(235,224,195,.75); }
 
 /* Cada tarjeta se queda pegada arriba y la siguiente la tapa */
@@ -516,13 +514,22 @@ footer { display: flex; justify-content: space-between; padding: 24px 3vw; font-
   .menu nav { display: none; }
   .s-banner, .cifras-grid { grid-template-columns: 1fr; }
   .banner-texto { font-size: 12vw; }
-  /* logos: 2 columnas; si queda uno solo al final, ocupa todo el ancho */
+  /* logos: separadores uniformes y fichas alineadas en dos columnas */
   .logos-cabecera { flex-direction: column; align-items: flex-start; padding: 8vh 16px 4vh; }
   .logos-intro { text-align: left; }
-  .logos-grilla { grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; }
-  /* el último, si queda solo, va centrado y del mismo tamaño que los demás */
-  .logos-grilla li:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 5px); }
-  .logos-grilla p { font-size: 11px; }
+  .logos-grilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; padding: 0 16px;
+    background: rgba(32,11,15,.8); border: 0;
+  }
+  .logos-grilla li {
+    grid-template-rows: 1fr auto; min-height: 200px; padding: 14px 10px;
+    border: 0;
+  }
+  .logos-grilla li:nth-child(3n + 1) { border-left: 0; }
+  .logo-ficha { width: 100%; max-width: 132px; }
+  .logo-ficha img { width: 100%; }
+  .logos-grilla p { min-height: 2.4em; margin-top: 8px; font-size: 11px; line-height: 1.2; }
+  .logos-grilla li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .tarjeta-roja {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
   }
@@ -548,9 +555,9 @@ footer { display: flex; justify-content: space-between; padding: 24px 3vw; font-
   .ventana-grilla { grid-template-columns: 1fr 1fr; gap: 6px; }
   /* servicios */
   .s-servicios { padding: 12vh 16px 8vh; }
-  .servicios-titulo { font-size: 18vw; }
+  .servicios-titulo { width: 100%; font-size: clamp(42px, 14vw, 64px); }
+  .servicios-titulo span { max-width: 100%; }
   .sangria-titulo { padding-left: 4vw; }
-  .servicios-flecha { bottom: auto; top: 0; font-size: 16vw; }
   .servicios-intro { margin-left: 0; }
   .servicio { top: calc(70px + var(--orden, 0) * 12px); padding: 18px; gap: 18px; border-radius: 20px; margin-bottom: 5vh; }
   .servicio-visual { min-height: 220px; border-radius: 14px 80px 14px 14px; }
